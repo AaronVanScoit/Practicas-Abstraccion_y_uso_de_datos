@@ -81,8 +81,8 @@ Cada carpeta de proyecto está estructurada bajo un esquema de **programación m
 ### Requisitos Previos
 Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
 
-* **Git:** Necesario para clonar el repositorio. https://git-scm.com/
-* **Compilador C/C++:** GCC o Clang.
+* **Git:** Necesario para clonar el repositorio. [Instalar Git aquí](https://git-scm.com/).
+* **Compilador C/C++:** GCC 
 
 ---
 
