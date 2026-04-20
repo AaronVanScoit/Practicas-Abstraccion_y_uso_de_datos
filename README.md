@@ -112,16 +112,16 @@ gcc main.c archivo.c -o programa
 
 #### 3.-Ejecución
 
-- En **Linux/macOS**:
-  ```bash
-  ./programa
-  ```
+En **Linux/macOS**:
+```bash
+./programa
+```
 
-- En **Windows**:
-  ```bash
-  programa.exe
-  ```
-  (O se puede ejecutar directo desde Dev-C++)
+En **Windows**:
+```bash
+programa.exe
+```
+O se puede ejecutar directo desde Dev-C++)
 
 ---
 
