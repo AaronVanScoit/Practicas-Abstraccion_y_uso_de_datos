@@ -38,21 +38,18 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_4/`  → Pila con punteros (nuevo tipo de dato)
 * `Proyecto_5/`  → Pila con librerías STL (dato base)
 * `Proyecto_6/`  → Pila con librerías STL (nuevo tipo de dato)
-  
 * `Proyecto_7/`  → Cola con arreglos (dato base)
 * `Proyecto_8/`  → Cola con arreglos (nuevo tipo de dato)
 * `Proyecto_9/`  → Cola con punteros (dato base)
 * `Proyecto_10/` → Cola con punteros (nuevo tipo de dato)
 * `Proyecto_11/` → Cola con librerías STL (dato base)
 * `Proyecto_12/` → Cola con librerías STL (nuevo tipo de dato)
-  
 * `Proyecto_13/` → Fila con arreglos (dato base)
 * `Proyecto_14/` → Fila con arreglos (nuevo tipo de dato)
 * `Proyecto_15/` → Fila con punteros (dato base)
 * `Proyecto_16/` → Fila con punteros (nuevo tipo de dato)
 * `Proyecto_17/` → Fila con librerías (dato base)
 * `Proyecto_18/` → Fila con librerías (nuevo tipo de dato)
-  
 * `Proyecto_19/` → Ordenamiento Bubble Sort
 * `Proyecto_20/` → Ordenamiento Merge Sort
 * `Proyecto_21/` → Ordenamiento Quick Sort
