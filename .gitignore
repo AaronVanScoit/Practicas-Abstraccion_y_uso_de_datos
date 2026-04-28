@@ -1,0 +1,43 @@
+# ===== macOS =====
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# ===== Linux =====
+.Trash-*
+.fuse_hidden*
+.nfs*
+
+# ===== General system files =====
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# ===== Editors =====
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ===== Logs & temp =====
+*.log
+*.tmp
+
+# ===== Compiled stuff (C/C++) =====
+*.o
+*.out
+*.obj
+*.exe
+*.a
+*.so
+
+# ===== Python cache =====
+_pycache_/
+*.pyc
+
+# ===== Node =====
+node_modules/
+
+# ===== Backup files =====
+*~
+*.bak
