@@ -13,15 +13,15 @@ Este repositorio es nuestro espacio de trabajo colaborativo para la materia impa
 El repositorio se divide en tres niveles principales correspondientes a los parciales del curso:
 
 ### Primer_Parcial /
-* `Proyecto_1/`  → Hola mundo
-* `Proyecto_2/`  → Suma de dos valores como parámetros
-* `Proyecto_3/`  → Calculadora básica (suma, resta, div, mult)
-* `Proyecto_4/`  → Calculadora con 2, 0, 3 parametros (suma, resta, div, mult)
-* `Proyecto_5/`  → Calculadora nueva con herencia (suma, resta, div, mult, pot, mod)
-* `Proyecto_6/`  → Calculadora nueva con herencia y sobreescritura de funciones (suma, resta, div, mult)
-* `Proyecto_7/`  → Creacion de tipo de dato en PE y POO
-* `Proyecto_8/`  → Identificar el tamaño en PE y POO 
-* `Proyecto_9/`  → Promedio
+* `Proyecto_01/`  → Hola mundo
+* `Proyecto_02/`  → Suma de dos valores como parámetros
+* `Proyecto_03/`  → Calculadora básica (suma, resta, div, mult)
+* `Proyecto_04/`  → Calculadora con 2, 0, 3 parametros (suma, resta, div, mult)
+* `Proyecto_05/`  → Calculadora nueva con herencia (suma, resta, div, mult, pot, mod)
+* `Proyecto_06/`  → Calculadora nueva con herencia y sobreescritura de funciones (suma, resta, div, mult)
+* `Proyecto_07/`  → Creacion de tipo de dato en PE y POO
+* `Proyecto_08/`  → Identificar el tamaño en PE y POO 
+* `Proyecto_09/`  → Promedio
 * `Proyecto_10/` → Promedio con array
 * `Proyecto_11/` → Promedio con array y con puntero
 * `Proyecto_12/` → Multiplicacion de matrices
@@ -32,15 +32,15 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * **Reporte_Primer_Parcial.pdf** → Documentación detallada de cada práctica del primer parcial.
   
 ### Segundo_Parcial /
-* `Proyecto_1/`  → Pila con arreglos (dato base)
-* `Proyecto_2/`  → Pila con arreglos (nuevo tipo de dato)
-* `Proyecto_3/`  → Pila con punteros (dato base)
-* `Proyecto_4/`  → Pila con punteros (nuevo tipo de dato)
-* `Proyecto_5/`  → Pila con librerías (dato base)
-* `Proyecto_6/`  → Pila con librerías (nuevo tipo de dato)
-* `Proyecto_7/`  → Cola con arreglos (dato base)
-* `Proyecto_8/`  → Cola con arreglos (nuevo tipo de dato)
-* `Proyecto_9/`  → Cola con punteros (dato base)
+* `Proyecto_01/`  → Pila con arreglos (dato base)
+* `Proyecto_02/`  → Pila con arreglos (nuevo tipo de dato)
+* `Proyecto_03/`  → Pila con punteros (dato base)
+* `Proyecto_04/`  → Pila con punteros (nuevo tipo de dato)
+* `Proyecto_05/`  → Pila con librerías (dato base)
+* `Proyecto_06/`  → Pila con librerías (nuevo tipo de dato)
+* `Proyecto_07/`  → Cola con arreglos (dato base)
+* `Proyecto_08/`  → Cola con arreglos (nuevo tipo de dato)
+* `Proyecto_09/`  → Cola con punteros (dato base)
 * `Proyecto_10/` → Cola con punteros (nuevo tipo de dato)
 * `Proyecto_11/` → Cola con librerías (dato base)
 * `Proyecto_12/` → Cola con librerías (nuevo tipo de dato)
@@ -56,13 +56,13 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * **Reporte_Segundo_Parcial.pdf** → Documentación detallada de cada práctica del segundo parcial.
 
 ### Tercer_Parcial /
-* `Proyecto_1/`  → Archivos: Lectura y escritura de CSV.
-* `Proyecto_2/`  → Archivos: Lectura y escritura de XML.
-* `Proyecto_3/`  → Archivos: Lectura y escritura de TXT.
-* `Proyecto_4/`  → Archivos: Lectura y escritura de JSON.
-* `Proyecto_5/`  → Implementación de Grafos.
-* `Proyecto_6/`  → Implementación de Digrafos.
-* `Proyecto_7/`  → Implementación de Árboles.
+* `Proyecto_01/`  → Archivos: Lectura y escritura de CSV.
+* `Proyecto_02/`  → Archivos: Lectura y escritura de XML.
+* `Proyecto_03/`  → Archivos: Lectura y escritura de TXT.
+* `Proyecto_04/`  → Archivos: Lectura y escritura de JSON.
+* `Proyecto_05/`  → Implementación de Grafos.
+* `Proyecto_06/`  → Implementación de Digrafos.
+* `Proyecto_07/`  → Implementación de Árboles.
 * ... (Sucesivamente hasta completar el parcial)
 * **Reporte_Tercer_Parcial.pdf** → Documentación detallada de cada práctica del tercer parcial.
 
