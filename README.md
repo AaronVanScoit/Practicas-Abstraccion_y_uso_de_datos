@@ -32,26 +32,30 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * **Reporte_Primer_Parcial.pdf** → Documentación detallada de cada práctica del primer parcial.
   
 ### Segundo Parcial /
-* `Proyecto_1/`  → [Nombre de la práctica]
-* `Proyecto_2/`  → [Nombre de la práctica]
-* `Proyecto_3/`  → [Nombre de la práctica]
-* `Proyecto_4/`  → [Nombre de la práctica]
-* `Proyecto_5/`  → [Nombre de la práctica]
-* `Proyecto_6/`  → [Nombre de la práctica]
-* `Proyecto_7/`  → [Nombre de la práctica]
-* `Proyecto_8/`  → [Nombre de la práctica]
-* `Proyecto_9/`  → [Nombre de la práctica]
-* `Proyecto_10/` → [Nombre de la práctica]
-* `Proyecto_11/` → [Nombre de la práctica]
-* `Proyecto_12/` → [Nombre de la práctica]
-* `Proyecto_13/` → [Nombre de la práctica]
-* `Proyecto_14/` → [Nombre de la práctica]
-* `Proyecto_15/` → [Nombre de la práctica]
-* `Proyecto_16/` → [Nombre de la práctica]
-* `Proyecto_17/` → [Nombre de la práctica]
-* `Proyecto_18/` → [Nombre de la práctica]
-* `Proyecto_19/` → [Nombre de la práctica]
-* `Proyecto_20/` → [Nombre de la práctica]
+* `Proyecto_1/`  → Pila con arreglos (dato base)
+* `Proyecto_2/`  → Pila con arreglos (nuevo tipo de dato)
+* `Proyecto_3/`  → Pila con punteros (dato base)
+* `Proyecto_4/`  → Pila con punteros (nuevo tipo de dato)
+* `Proyecto_5/`  → Pila con librerías STL (dato base)
+* `Proyecto_6/`  → Pila con librerías STL (nuevo tipo de dato)
+  
+* `Proyecto_7/`  → Cola con arreglos (dato base)
+* `Proyecto_8/`  → Cola con arreglos (nuevo tipo de dato)
+* `Proyecto_9/`  → Cola con punteros (dato base)
+* `Proyecto_10/` → Cola con punteros (nuevo tipo de dato)
+* `Proyecto_11/` → Cola con librerías STL (dato base)
+* `Proyecto_12/` → Cola con librerías STL (nuevo tipo de dato)
+  
+* `Proyecto_13/` → Fila con arreglos (dato base)
+* `Proyecto_14/` → Fila con arreglos (nuevo tipo de dato)
+* `Proyecto_15/` → Fila con punteros (dato base)
+* `Proyecto_16/` → Fila con punteros (nuevo tipo de dato)
+* `Proyecto_17/` → Fila con librerías (dato base)
+* `Proyecto_18/` → Fila con librerías (nuevo tipo de dato)
+  
+* `Proyecto_19/` → Ordenamiento Bubble Sort
+* `Proyecto_20/` → Ordenamiento Merge Sort
+* `Proyecto_21/` → Ordenamiento Quick Sort
 * **Reporte_Segundo_Parcial.pdf** → Documentación detallada de cada práctica del segundo parcial.
 
 ### Tercer Parcial /
