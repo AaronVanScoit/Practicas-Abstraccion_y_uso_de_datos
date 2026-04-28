@@ -12,7 +12,7 @@ Este repositorio es nuestro espacio de trabajo colaborativo para la materia impa
 
 El repositorio se divide en tres niveles principales correspondientes a los parciales del curso:
 
-### Primer Parcial /
+### Primer_Parcial /
 * `Proyecto_1/`  → Hola mundo
 * `Proyecto_2/`  → Suma de dos valores como parámetros
 * `Proyecto_3/`  → Calculadora básica (suma, resta, div, mult)
@@ -31,7 +31,7 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_16/` → Fractales: tríangulo de sierpinski y polvo de cantor
 * **Reporte_Primer_Parcial.pdf** → Documentación detallada de cada práctica del primer parcial.
   
-### Segundo Parcial /
+### Segundo_Parcial /
 * `Proyecto_1/`  → Pila con arreglos (dato base)
 * `Proyecto_2/`  → Pila con arreglos (nuevo tipo de dato)
 * `Proyecto_3/`  → Pila con punteros (dato base)
@@ -55,7 +55,7 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_21/` → Ordenamiento Quick Sort
 * **Reporte_Segundo_Parcial.pdf** → Documentación detallada de cada práctica del segundo parcial.
 
-### Tercer Parcial /
+### Tercer_Parcial /
 * `Proyecto_1/`  → Archivos: Lectura y escritura de CSV.
 * `Proyecto_2/`  → Archivos: Lectura y escritura de XML.
 * `Proyecto_3/`  → Archivos: Lectura y escritura de TXT.
