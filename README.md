@@ -13,7 +13,6 @@ Este repositorio es nuestro espacio de trabajo colaborativo para la materia impa
 El repositorio se divide en tres niveles principales correspondientes a los parciales del curso:
 
 ### Primer_Parcial /
-* **Reporte_Primer_Parcial.pdf** → Documentación detallada de cada práctica del primer parcial.
 * `Proyecto_01/`  → Hola mundo
 * `Proyecto_02/`  → Suma de dos valores como parámetros
 * `Proyecto_03/`  → Calculadora básica (suma, resta, div, mult)
@@ -30,9 +29,9 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_14/` → Lista de personas con puntero al arreglo
 * `Proyecto_15/` → Factorial y serie de fibonacci con funciones fibo() y fibo2()
 * `Proyecto_16/` → Fractales: tríangulo de sierpinski y polvo de cantor
+* **Reporte_Primer_Parcial.pdf** → Documentación detallada de cada práctica del primer parcial.
   
 ### Segundo_Parcial /
-* **Reporte_Segundo_Parcial.pdf** → Documentación detallada de cada práctica del segundo parcial.
 * `Proyecto_01/`  → Pila con arreglos (dato base)
 * `Proyecto_02/`  → Pila con arreglos (nuevo tipo de dato)
 * `Proyecto_03/`  → Pila con punteros (dato base)
@@ -54,9 +53,9 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_19/` → Ordenamiento Bubble Sort
 * `Proyecto_20/` → Ordenamiento Merge Sort
 * `Proyecto_21/` → Ordenamiento Quick Sort
+* **Reporte_Segundo_Parcial.pdf** → Documentación detallada de cada práctica del segundo parcial.
 
 ### Tercer_Parcial /
-* **Reporte_Tercer_Parcial.pdf** → Documentación detallada de cada práctica del tercer parcial.
 * `Proyecto_01/`  → Archivos: Lectura y escritura de CSV.
 * `Proyecto_02/`  → Archivos: Lectura y escritura de XML.
 * `Proyecto_03/`  → Archivos: Lectura y escritura de TXT.
@@ -65,6 +64,7 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_06/`  → Implementación de Digrafos.
 * `Proyecto_07/`  → Implementación de Árboles.
 * ... (Sucesivamente hasta completar el parcial)
+* **Reporte_Tercer_Parcial.pdf** → Documentación detallada de cada práctica del tercer parcial.
 
 ---
 
