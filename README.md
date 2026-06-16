@@ -78,32 +78,32 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_16/`  → Fractales: tríangulo de sierpinski y polvo de cantor
 
 #### Segundo Parcial — con salidas en CSV, JSON, TXT y XML
-* `Proyecto_17/`  → Pila con arreglos (dato base)
-* `Proyecto_18/`  → Pila con arreglos (nuevo tipo de dato)
-* `Proyecto_19/`  → Pila con punteros (dato base)
-* `Proyecto_20/`  → Pila con punteros (nuevo tipo de dato)
-* `Proyecto_21/`  → Pila con librerías (dato base)
-* `Proyecto_22/`  → Pila con librerías (nuevo tipo de dato)
-* `Proyecto_23/`  → Cola con arreglos (dato base)
-* `Proyecto_24/`  → Cola con arreglos (nuevo tipo de dato)
-* `Proyecto_25/`  → Cola con punteros (dato base)
-* `Proyecto_26/`  → Cola con punteros (nuevo tipo de dato)
-* `Proyecto_27/`  → Cola con librerías (dato base)
-* `Proyecto_28/`  → Cola con librerías (nuevo tipo de dato)
-* `Proyecto_29/`  → Fila con arreglos (dato base)
-* `Proyecto_30/`  → Fila con arreglos (nuevo tipo de dato)
-* `Proyecto_31/`  → Fila con punteros (dato base)
-* `Proyecto_32/`  → Fila con punteros (nuevo tipo de dato)
-* `Proyecto_33/`  → Fila con librerías (dato base)
-* `Proyecto_34/`  → Fila con librerías (nuevo tipo de dato)
-* `Proyecto_35/`  → Ordenamiento Bubble Sort
-* `Proyecto_36/`  → Ordenamiento Merge Sort
-* `Proyecto_37/`  → Ordenamiento Quick Sort
+* `Proyecto_01/`  → Pila con arreglos (dato base)
+* `Proyecto_02/`  → Pila con arreglos (nuevo tipo de dato)
+* `Proyecto_03/`  → Pila con punteros (dato base)
+* `Proyecto_04/`  → Pila con punteros (nuevo tipo de dato)
+* `Proyecto_05/`  → Pila con librerías (dato base)
+* `Proyecto_06/`  → Pila con librerías (nuevo tipo de dato)
+* `Proyecto_07/`  → Cola con arreglos (dato base)
+* `Proyecto_08/`  → Cola con arreglos (nuevo tipo de dato)
+* `Proyecto_09/`  → Cola con punteros (dato base)
+* `Proyecto_10/`  → Cola con punteros (nuevo tipo de dato)
+* `Proyecto_11/`  → Cola con librerías (dato base)
+* `Proyecto_12/`  → Cola con librerías (nuevo tipo de dato)
+* `Proyecto_13/`  → Fila con arreglos (dato base)
+* `Proyecto_14/`  → Fila con arreglos (nuevo tipo de dato)
+* `Proyecto_15/`  → Fila con punteros (dato base)
+* `Proyecto_16/`  → Fila con punteros (nuevo tipo de dato)
+* `Proyecto_17/`  → Fila con librerías (dato base)
+* `Proyecto_18/`  → Fila con librerías (nuevo tipo de dato)
+* `Proyecto_19/`  → Ordenamiento Bubble Sort
+* `Proyecto_20/`  → Ordenamiento Merge Sort
+* `Proyecto_21/`  → Ordenamiento Quick Sort
 
 #### Estructuras de datos no lineales
-* `Proyecto_38/`  → Implementación de Grafo (no dirigido)
-* `Proyecto_39/`  → Implementación de Dígrafo (dirigido)
-* `Proyecto_40/`  → Implementación de Árbol BST
+* `Proyecto_01/`  → Implementación de Grafo (no dirigido)
+* `Proyecto_02/`  → Implementación de Dígrafo (dirigido)
+* `Proyecto_03/`  → Implementación de Árbol BST
 * **Reporte_Tercer_Parcial.pdf** → Documentación detallada de cada práctica del tercer parcial.
 
 ---
