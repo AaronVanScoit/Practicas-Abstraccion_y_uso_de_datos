@@ -1,0 +1,133 @@
+{
+  "arbol": {
+    "nodos": [
+      {"id":0,"etiqueta":"Casa"},
+      {"id":1,"etiqueta":"Insurgentes"},
+      {"id":2,"etiqueta":"Vasconcelos"},
+      {"id":3,"etiqueta":"Churubusco"},
+      {"id":4,"etiqueta":"Anil"},
+      {"id":5,"etiqueta":"Iztacalco"},
+      {"id":6,"etiqueta":"UPIICSA"},
+      {"id":0,"etiqueta":"Casa"},
+      {"id":1,"etiqueta":"Insurgentes"},
+      {"id":2,"etiqueta":"Vasconcelos"},
+      {"id":3,"etiqueta":"Churubusco"},
+      {"id":4,"etiqueta":"Anil"},
+      {"id":5,"etiqueta":"Iztacalco"},
+      {"id":6,"etiqueta":"UPIICSA"}
+    ],
+    "aristas": ["Casa-Insurgentes","Insurgentes-Vasconcelos","Vasconcelos-Churubusco","Churubusco-Anil","Anil-Iztacalco","Iztacalco-UPIICSA"],
+    "rutas": {
+      "conexiones": [
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 0,
+            "nodoFinal": 1,
+            "aristaConexion": "Casa-Insurgentes",
+            "tiempo": 10,
+            "costo": 10
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 1,
+            "nodoFinal": 2,
+            "aristaConexion": "Insurgentes-Vasconcelos",
+            "tiempo": 8,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 2,
+            "nodoFinal": 3,
+            "aristaConexion": "Vasconcelos-Churubusco",
+            "tiempo": 12,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 3,
+            "nodoFinal": 4,
+            "aristaConexion": "Churubusco-Anil",
+            "tiempo": 7,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 4,
+            "nodoFinal": 5,
+            "aristaConexion": "Anil-Iztacalco",
+            "tiempo": 5,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 5,
+            "nodoFinal": 6,
+            "aristaConexion": "Iztacalco-UPIICSA",
+            "tiempo": 8,
+            "costo": 50
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 0,
+            "nodoFinal": 1,
+            "aristaConexion": "Casa-Insurgentes",
+            "tiempo": 10,
+            "costo": 10
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 1,
+            "nodoFinal": 2,
+            "aristaConexion": "Insurgentes-Vasconcelos",
+            "tiempo": 8,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 2,
+            "nodoFinal": 3,
+            "aristaConexion": "Vasconcelos-Churubusco",
+            "tiempo": 12,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 3,
+            "nodoFinal": 4,
+            "aristaConexion": "Churubusco-Anil",
+            "tiempo": 7,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 4,
+            "nodoFinal": 5,
+            "aristaConexion": "Anil-Iztacalco",
+            "tiempo": 5,
+            "costo": 0
+          }
+        },
+        {
+          "conexionNodo2Nodo": {
+            "nodoInicial": 5,
+            "nodoFinal": 6,
+            "aristaConexion": "Iztacalco-UPIICSA",
+            "tiempo": 8,
+            "costo": 50
+          }
+        }
+      ]
+    }
+  }
+}
