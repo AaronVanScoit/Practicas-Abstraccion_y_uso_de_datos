@@ -1,6 +1,6 @@
 #ifndef LIB_GRAFO_H
 #define LIB_GRAFO_H
-#include "../tipos_comunes.h"
+#include "../../tipos_comunes.h"
 #include <stack>
 #define MAXN 10
 class Grafo {

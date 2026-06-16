@@ -1,6 +1,6 @@
 #ifndef LIB_ARBOL_H
 #define LIB_ARBOL_H
-#include "../tipos_comunes.h"
+#include "../../tipos_comunes.h"
 #include <queue>
 #define MAXN 10
 struct NodoArbolL{Lugar dato;int izq,der,padre;};

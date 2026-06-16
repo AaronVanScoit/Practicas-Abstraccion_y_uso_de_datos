@@ -1,6 +1,6 @@
 #ifndef LIB_DIGRAFO_H
 #define LIB_DIGRAFO_H
-#include "../tipos_comunes.h"
+#include "../../tipos_comunes.h"
 #include <queue>
 #define MAXN 10
 class Digrafo {

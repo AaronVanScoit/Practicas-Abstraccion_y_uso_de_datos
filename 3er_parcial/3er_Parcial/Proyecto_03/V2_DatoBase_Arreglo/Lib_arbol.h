@@ -1,6 +1,6 @@
 #ifndef LIB_ARBOL_H
 #define LIB_ARBOL_H
-#include "../tipos_comunes.h"
+#include "../../tipos_comunes.h"
 #define MAXN 15
 
 class Arbol {

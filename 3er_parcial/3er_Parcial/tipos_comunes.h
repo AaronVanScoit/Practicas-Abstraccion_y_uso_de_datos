@@ -24,7 +24,7 @@ struct conexionNodo2Nodo {
 };
 
 // Leer conexiones desde XML
-vector<conexionNodo2Nodo> leerDesdeXML(const string& archivo) {
+inline vector<conexionNodo2Nodo> leerDesdeXML(const string& archivo) {
     vector<conexionNodo2Nodo> conexiones;
     ifstream f(archivo);
     if(!f.is_open()){cout<<"[ERROR] No se pudo abrir "<<archivo<<endl;return conexiones;}
@@ -54,7 +54,7 @@ vector<conexionNodo2Nodo> leerDesdeXML(const string& archivo) {
 }
 
 // Leer conexiones desde JSON
-vector<conexionNodo2Nodo> leerDesdeJSON(const string& archivo) {
+inline vector<conexionNodo2Nodo> leerDesdeJSON(const string& archivo) {
     vector<conexionNodo2Nodo> conexiones;
     ifstream f(archivo);
     if(!f.is_open()){cout<<"[ERROR] No se pudo abrir "<<archivo<<endl;return conexiones;}
@@ -96,7 +96,7 @@ vector<conexionNodo2Nodo> leerDesdeJSON(const string& archivo) {
 }
 
 // Guardar 4 formatos
-void guardarSalidaGrafo(const string& titulo, const vector<Lugar>& nodos, const vector<conexionNodo2Nodo>& aristas) {
+inline void guardarSalidaGrafo(const string& titulo, const vector<Lugar>& nodos, const vector<conexionNodo2Nodo>& aristas) {
     // TXT
     ofstream txt("salida.txt");
     txt<<"=== "<<titulo<<" ==="<<endl;
