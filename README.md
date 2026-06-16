@@ -78,129 +78,137 @@ El repositorio se divide en tres niveles principales correspondientes a los parc
 * `Proyecto_16/`  → Fractales: tríangulo de sierpinski y polvo de cantor
 
 #### Segundo Parcial — con salidas en CSV, JSON, TXT y XML
-* `Proyecto_01/`  → Pila con arreglos (dato base)
-* `Proyecto_02/`  → Pila con arreglos (nuevo tipo de dato)
-* `Proyecto_03/`  → Pila con punteros (dato base)
-* `Proyecto_04/`  → Pila con punteros (nuevo tipo de dato)
-* `Proyecto_05/`  → Pila con librerías (dato base)
-* `Proyecto_06/`  → Pila con librerías (nuevo tipo de dato)
-* `Proyecto_07/`  → Cola con arreglos (dato base)
-* `Proyecto_08/`  → Cola con arreglos (nuevo tipo de dato)
-* `Proyecto_09/`  → Cola con punteros (dato base)
-* `Proyecto_10/`  → Cola con punteros (nuevo tipo de dato)
-* `Proyecto_11/`  → Cola con librerías (dato base)
-* `Proyecto_12/`  → Cola con librerías (nuevo tipo de dato)
-* `Proyecto_13/`  → Fila con arreglos (dato base)
-* `Proyecto_14/`  → Fila con arreglos (nuevo tipo de dato)
-* `Proyecto_15/`  → Fila con punteros (dato base)
-* `Proyecto_16/`  → Fila con punteros (nuevo tipo de dato)
-* `Proyecto_17/`  → Fila con librerías (dato base)
-* `Proyecto_18/`  → Fila con librerías (nuevo tipo de dato)
-* `Proyecto_19/`  → Ordenamiento Bubble Sort
-* `Proyecto_20/`  → Ordenamiento Merge Sort
-* `Proyecto_21/`  → Ordenamiento Quick Sort
+* `Proyecto_17/`  → Pila con arreglos (dato base)
+* `Proyecto_18/`  → Pila con arreglos (nuevo tipo de dato)
+* `Proyecto_19/`  → Pila con punteros (dato base)
+* `Proyecto_20/`  → Pila con punteros (nuevo tipo de dato)
+* `Proyecto_21/`  → Pila con librerías (dato base)
+* `Proyecto_22/`  → Pila con librerías (nuevo tipo de dato)
+* `Proyecto_23/`  → Cola con arreglos (dato base)
+* `Proyecto_24/`  → Cola con arreglos (nuevo tipo de dato)
+* `Proyecto_25/`  → Cola con punteros (dato base)
+* `Proyecto_26/`  → Cola con punteros (nuevo tipo de dato)
+* `Proyecto_27/`  → Cola con librerías (dato base)
+* `Proyecto_28/`  → Cola con librerías (nuevo tipo de dato)
+* `Proyecto_29/`  → Fila con arreglos (dato base)
+* `Proyecto_30/`  → Fila con arreglos (nuevo tipo de dato)
+* `Proyecto_31/`  → Fila con punteros (dato base)
+* `Proyecto_32/`  → Fila con punteros (nuevo tipo de dato)
+* `Proyecto_33/`  → Fila con librerías (dato base)
+* `Proyecto_34/`  → Fila con librerías (nuevo tipo de dato)
+* `Proyecto_35/`  → Ordenamiento Bubble Sort
+* `Proyecto_36/`  → Ordenamiento Merge Sort
+* `Proyecto_37/`  → Ordenamiento Quick Sort
 
 #### Estructuras de datos no lineales
-* `Proyecto_01/`  → Implementación de Grafos
-  * `V1_DatoBase_Variable/`   → Grafo no dirigido con dato base `int` – variable
-  * `V2_DatoBase_Arreglo/`    → Grafo no dirigido con dato base `int` – arreglo
-  * `V3_NuevoTipo_Variable/`  → Grafo no dirigido con nuevo tipo `Lugar` – variable
-  * `V4_NuevoTipo_Arreglo/`   → Grafo no dirigido con nuevo tipo `Lugar` – arreglo
-  * `V5_ADT_Pila/`            → Grafo no dirigido con ADT Pila de nodos `Lugar`
-  * `V6_ADT_Cola/`            → Grafo no dirigido con ADT Cola de nodos `Lugar`
-  * `V7_ADT_Lista/`           → Grafo no dirigido con ADT Lista enlazada de nodos `Lugar`
-* `Proyecto_02/`  → Implementación de Digrafos
-  * `V1_DatoBase_Variable/`   → Dígrafo con dato base `int` – variable
-  * `V2_DatoBase_Arreglo/`    → Dígrafo con dato base `int` – arreglo
-  * `V3_NuevoTipo_Variable/`  → Dígrafo con nuevo tipo `Lugar` – variable
-  * `V4_NuevoTipo_Arreglo/`   → Dígrafo con nuevo tipo `Lugar` – arreglo
-  * `V5_ADT_Pila/`            → Dígrafo con ADT Pila de nodos `Lugar`
-  * `V6_ADT_Cola/`            → Dígrafo con ADT Cola de nodos `Lugar`
-  * `V7_ADT_Lista/`           → Dígrafo con ADT Lista enlazada de nodos `Lugar`
-* `Proyecto_03/`  → Implementación de Árboles
-  * `V1_DatoBase_Variable/`   → Árbol BST con dato base `int` – variable
-  * `V2_DatoBase_Arreglo/`    → Árbol BST con dato base `int` – arreglo (representación heap)
-  * `V3_NuevoTipo_Variable/`  → Árbol BST con nuevo tipo `Lugar` – variable
-  * `V4_NuevoTipo_Arreglo/`   → Árbol BST con nuevo tipo `Lugar` – arreglo (representación heap)
-  * `V5_ADT_Pila/`            → Árbol BST con ADT Pila (recorrido preorden iterativo)
-  * `V6_ADT_Cola/`            → Árbol BST con ADT Cola (recorrido BFS)
-  * `V7_ADT_Lista/`           → Árbol BST con ADT Lista (recorrido inorden almacenado en lista)
+* `Proyecto_38/`  → Implementación de Grafo (no dirigido)
+* `Proyecto_39/`  → Implementación de Dígrafo (dirigido)
+* `Proyecto_40/`  → Implementación de Árbol BST
 * **Reporte_Tercer_Parcial.pdf** → Documentación detallada de cada práctica del tercer parcial.
+
+---
+
+## Tipo de dato — Grafo, Dígrafo y Árbol
+
+Los proyectos 38, 39 y 40 implementan un tipo de dato propio que contiene:
+
+```
+estructura principal {
+    nodos    → conjunto de nodos  (id, etiqueta)
+    aristas  → conjunto de aristas
+    rutas    → conjunto de conexiones {
+        conexionNodo2Nodo {
+            nodoInicial
+            nodoFinal
+            aristaConexion
+            tiempo
+            costo
+        }
+    }
+}
+```
+
+Cada proyecto:
+- Lee su información desde `datos.xml` o `datos.json`
+- Aplica el **algoritmo de Dijkstra** para encontrar el camino de menor costo
+- Exporta los resultados en **4 formatos**: `salida.txt`, `salida.csv`, `salida.json`, `salida.xml`
+
+La diferencia entre los tres es:
+- **Grafo** → aristas no dirigidas (se puede ir en ambos sentidos)
+- **Dígrafo** → aristas dirigidas (solo van en un sentido: `nodoInicial → nodoFinal`)
+- **Árbol BST** → estructura jerárquica con recorridos inorden, preorden y posorden
+
+Los datos de ejemplo representan la ruta **Casa → Insurgentes → Vasconcelos → Churubusco → Añil → Iztacalco → UPIICSA**.
 
 ---
 
 ## Contenido de cada Proyecto
 
-Cada carpeta de proyecto está estructurada bajo un esquema de **programación modular**, conteniendo los siguientes archivos base:
+Cada carpeta de proyecto está estructurada bajo un esquema de **programación modular**:
 
-* **`archivo.h`** → Definición de las interfaces, estructuras de datos y prototipos de funciones.
-* **`archivo.c`** → Implementación detallada de la lógica y funciones.
-* **`main.c`** → Punto de entrada del programa, encargado de la ejecución y pruebas.
+* **`archivo.h`** → Definición de interfaces, estructuras de datos y prototipos de funciones.
+* **`archivo.cpp`** → Implementación detallada de la lógica y funciones.
+* **`main.cpp`** → Punto de entrada del programa, ejecución y pruebas.
 
-Los proyectos del **Tercer Parcial** incluyen adicionalmente la generación automática de cuatro archivos de salida al ejecutarse:
+Los proyectos 38, 39 y 40 incluyen adicionalmente:
+
+* **`datos.xml`** → Archivo de entrada con las conexiones en formato XML.
+* **`datos.json`** → Archivo de entrada con las conexiones en formato JSON.
+
+Al ejecutarse generan automáticamente:
 
 * `salida.txt` · `salida.csv` · `salida.json` · `salida.xml`
-
-Los proyectos de Grafo, Dígrafo y Árbol incluyen además:
-
-* **`tipos_comunes.h`** → Tipos `Lugar` y `conexionNodo2Nodo`, lectura desde XML/JSON y exportación de salidas.
-* **`datos.xml`** → Archivo de datos de ejemplo con conexiones `conexionNodo2Nodo`.
-* **`datos.json`** → Archivo de datos de ejemplo en formato JSON.
 
 ---
 
 ## Guía de Instalación y Uso
 
 ### Requisitos Previos
-Antes de comenzar, asegúrate de tener instalado lo siguiente en tu sistema:
-
-* **Git:** Necesario para clonar el repositorio. [Instalar Git aquí](https://git-scm.com/).
-* **Compilador C/C++:** GCC
-
----
+* **Git** → [Instalar Git](https://git-scm.com/)
+* **Compilador C/C++** → GCC
 
 ### Pasos a seguir
 
 #### 1.- Clonar el repositorio
-Puedes clonar el repositorio usando **HTTPS** o **SSH**.
 
-**Opción A — HTTPS:**
+**HTTPS:**
 ```bash
 git clone https://github.com/AaronVanScoit/Practicas-Abstraccion_y_uso_de_datos.git
 cd Practicas-Abstraccion_y_uso_de_datos
 ```
 
-**Opción B — SSH:**
+**SSH:**
 ```bash
 git clone git@github.com:AaronVanScoit/Practicas-Abstraccion_y_uso_de_datos.git
 cd Practicas-Abstraccion_y_uso_de_datos
 ```
 
 #### 2.- Compilación
-Al ser un proyecto modular, es necesario compilar los archivos de implementación junto con el principal:
 
+Para la mayoría de los proyectos:
 ```bash
 g++ main.cpp archivo.cpp -o programa
 ```
 
-Para los proyectos de Grafo, Dígrafo y Árbol, `tipos_comunes.h` se incluye automáticamente como header:
-
+Para los proyectos de Grafo, Dígrafo y Árbol:
 ```bash
-g++ main.cpp F_grafo.cpp -o programa
+g++ F_grafo.cpp main.cpp -o grafo
+g++ F_digrafo.cpp main.cpp -o digrafo
+g++ F_arbol.cpp main.cpp -o arbol
 ```
 
 #### 3.- Ejecución
 
-En **Linux/macOS**:
+**Linux/macOS:**
 ```bash
 ./programa
 ```
 
-En **Windows**:
+**Windows:**
 ```bash
 programa.exe
 ```
-O se puede ejecutar directo desde Dev-C++.
+O directamente desde Dev-C++.
 
 ---
 
