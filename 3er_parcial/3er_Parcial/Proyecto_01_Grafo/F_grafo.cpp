@@ -19,7 +19,6 @@ void agregarConexion(Grafo& g, int nodoIni, int nodoFin,
     c.tiempo        = tiempo;
     c.costo         = costo;
     g.rutas.conexiones.push_back(c);
-    // registrar nombre de arista si no existe
     bool existe = false;
     for (auto& a : g.aristas) if (a == arista) { existe = true; break; }
     if (!existe) g.aristas.push_back(arista);
@@ -53,7 +52,6 @@ void dijkstra(const Grafo& g, int origen) {
     dist[origen] = 0;
 
     for (int iter = 0; iter < n - 1; iter++) {
-        // nodo con menor distancia no visitado
         int u = -1;
         float mn = 1e9;
         for (int i = 0; i < n; i++)
@@ -61,11 +59,10 @@ void dijkstra(const Grafo& g, int origen) {
         if (u == -1) break;
         vis[u] = true;
 
-        // relajar vecinos (grafo no dirigido: ida y vuelta)
         for (auto& c : g.rutas.conexiones) {
             int v = -1; float w = c.tiempo;
             if (c.nodoInicial == u) v = c.nodoFinal;
-            if (c.nodoFinal   == u) v = c.nodoInicial; // no dirigido
+            if (c.nodoFinal   == u) v = c.nodoInicial;
             if (v != -1 && !vis[v] && dist[u] + w < dist[v]) {
                 dist[v] = dist[u] + w;
                 prev[v] = u;
@@ -73,7 +70,6 @@ void dijkstra(const Grafo& g, int origen) {
         }
     }
 
-    // Buscar etiqueta por id
     auto etq = [&](int id) -> string {
         for (auto& nd : g.nodos) if (nd.id == id) return nd.etiqueta;
         return to_string(id);
@@ -84,9 +80,35 @@ void dijkstra(const Grafo& g, int origen) {
         cout << "  -> " << etq(g.nodos[i].id);
         if (dist[i] >= 1e9) { cout << ": INACCESIBLE" << endl; continue; }
         cout << ": " << dist[i] << " min" << "  | camino: ";
-        // reconstruir camino
         vector<int> path;
         for (int cur = i; cur != -1; cur = prev[cur]) path.push_back(cur);
+        for (int k = path.size()-1; k >= 0; k--) {
+            cout << etq(g.nodos[path[k]].id);
+            if (k > 0) cout << " -> ";
+        }
+        cout << endl;
+    }
+
+    // ── RUTA MÁS CORTA AL DESTINO ──────────────────────────────────────────
+    cout << "\nNodo destino (0=Casa ... 9=UPIICSA): ";
+    int destino;
+    cin >> destino;
+
+    // buscar el indice del nodo destino
+    int di = -1;
+    for (int i = 0; i < n; i++)
+        if (g.nodos[i].id == destino) { di = i; break; }
+
+    cout << "\n>>> RUTA MAS CORTA de [" << etq(origen)
+        << "] a [" << etq(destino) << "] <<<" << endl;
+
+    if (di == -1 || dist[di] >= 1e9) {
+        cout << "  No existe camino entre ambos nodos." << endl;
+    } else {
+        cout << "  Tiempo total: " << dist[di] << " min" << endl;
+        cout << "  Camino: ";
+        vector<int> path;
+        for (int cur = di; cur != -1; cur = prev[cur]) path.push_back(cur);
         for (int k = path.size()-1; k >= 0; k--) {
             cout << etq(g.nodos[path[k]].id);
             if (k > 0) cout << " -> ";
@@ -112,7 +134,6 @@ void rutaMasLarga(const Grafo& g, int origen, int destino) {
     vector<int>   caminoActual, mejorCamino;
     float costoActual = 0, mejorCosto = -1;
 
-    // DFS recursivo con backtracking
     function<void(int)> dfs = [&](int u) {
         int ui = idx(u);
         if (u == destino) {
@@ -125,7 +146,7 @@ void rutaMasLarga(const Grafo& g, int origen, int destino) {
         for (auto& c : g.rutas.conexiones) {
             int v = -1; float w = c.tiempo;
             if (c.nodoInicial == u) v = c.nodoFinal;
-            if (c.nodoFinal   == u) v = c.nodoInicial; // no dirigido
+            if (c.nodoFinal   == u) v = c.nodoInicial;
             if (v == -1) continue;
             int vi = idx(v);
             if (vi == -1 || visitado[vi]) continue;
@@ -162,7 +183,6 @@ void rutaMasLarga(const Grafo& g, int origen, int destino) {
 
 // Leer desde XML 
 void leerDesdeXML(Grafo& g, const string& archivo) {
-    // Limpiar grafo antes de cargar para evitar duplicados
     g.nodos.clear(); g.aristas.clear(); g.rutas.conexiones.clear();
     ifstream f(archivo);
     if (!f.is_open()) { cout << "[ERROR] No se pudo abrir " << archivo << endl; return; }
@@ -188,9 +208,7 @@ void leerDesdeXML(Grafo& g, const string& archivo) {
             if (!(v=ext("tiempo")).empty())         c.tiempo        = stof(v);
             if (!(v=ext("costo")).empty())          c.costo         = stof(v);
         }
-        // leer nodos
         if (linea.find("<nodo>") != string::npos) {
-            // formato: <nodo><id>0</id><etiqueta>Casa</etiqueta></nodo>
             auto ext = [&](string tag) -> string {
                 string op = "<"+tag+">", cl = "</"+tag+">";
                 size_t s = linea.find(op), e = linea.find(cl);
@@ -209,7 +227,6 @@ void leerDesdeXML(Grafo& g, const string& archivo) {
 
 // Leer desde JSON 
 void leerDesdeJSON(Grafo& g, const string& archivo) {
-    // Limpiar grafo antes de cargar para evitar duplicados
     g.nodos.clear(); g.aristas.clear(); g.rutas.conexiones.clear();
     ifstream f(archivo);
     if (!f.is_open()) { cout << "[ERROR] No se pudo abrir " << archivo << endl; return; }
@@ -228,7 +245,6 @@ void leerDesdeJSON(Grafo& g, const string& archivo) {
         return bloque.substr(vs,ve-vs);
     };
 
-    // parsear nodos
     size_t posN = content.find("\"nodos\"");
     if (posN != string::npos) {
         size_t arr = content.find("[", posN);
@@ -244,7 +260,6 @@ void leerDesdeJSON(Grafo& g, const string& archivo) {
         }
     }
 
-    // parsear conexiones
     size_t posC = content.find("\"conexiones\"");
     if (posC != string::npos) {
         size_t arr = content.find("[", posC);
@@ -267,7 +282,6 @@ void leerDesdeJSON(Grafo& g, const string& archivo) {
 
 // Guardar 4 salidas 
 void guardarSalidas(const Grafo& g) {
-    //  TXT 
     ofstream txt("salida.txt");
     txt << "=== GRAFO ===" << endl;
     txt << "NODOS:" << endl;
@@ -281,7 +295,6 @@ void guardarSalidas(const Grafo& g) {
             << c.nodoFinal << " | tiempo:" << c.tiempo << " | costo:" << c.costo << endl;
     txt.close();
 
-    // CSV 
     ofstream csv("salida.csv");
     csv << "tipo,id,etiqueta,nodoInicial,nodoFinal,aristaConexion,tiempo,costo" << endl;
     for (auto& n : g.nodos)
@@ -291,7 +304,6 @@ void guardarSalidas(const Grafo& g) {
             << c.aristaConexion << "," << c.tiempo << "," << c.costo << "\n";
     csv.close();
 
-    // JSON 
     ofstream json("salida.json");
     json << "{\n  \"grafo\": {\n";
     json << "    \"nodos\": [\n";
@@ -322,7 +334,6 @@ void guardarSalidas(const Grafo& g) {
     json << "      ]\n    }\n  }\n}" << endl;
     json.close();
 
-    // XML
     ofstream xml("salida.xml");
     xml << "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<grafo>\n";
     xml << "  <nodos>\n";

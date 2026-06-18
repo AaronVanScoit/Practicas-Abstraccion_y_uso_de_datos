@@ -75,6 +75,33 @@ void dijkstra(const Digrafo& g, int origen) {
         }
         cout << endl;
     }
+
+    //Ruta más corta
+    cout << "\nNodo destino (0=Casa ... 9=UPIICSA): ";
+    int destino;
+    cin >> destino;
+
+    int di = -1;
+    for (int i = 0; i < n; i++)
+        if (g.nodos[i].id == destino) { di = i; break; }
+
+    cout << "\n>>> RUTA MAS CORTA de [" << etq(origen)
+        << "] a [" << etq(destino) << "] <<<" << endl;
+
+    if (di == -1 || dist[di] >= 1e9) {
+        cout << "  No existe camino entre ambos nodos." << endl;
+    } else {
+        cout << "  Tiempo total: " << dist[di] << " min" << endl;
+        cout << "  Camino: ";
+        vector<int> path;
+        for (int cur = di; cur != -1; cur = prev[cur]) path.push_back(cur);
+        for (int k = path.size()-1; k >= 0; k--) {
+            cout << etq(g.nodos[path[k]].id);
+            if (k > 0) cout << " -> ";
+        }
+        cout << endl;
+    }
+    // ───────────────────────────────────────────────────────────────────────
 }
 
 // Ruta más larga (DFS con backtracking, DIRIGIDO)
@@ -93,13 +120,12 @@ void rutaMasLarga(const Digrafo& g, int origen, int destino) {
     float costoActual = 0, mejorCosto = -1;
 
     function<void(int)> dfs = [&](int u) {
-        int ui = idx(u);
         if (u == destino) {
             if (costoActual > mejorCosto) { mejorCosto = costoActual; mejorCamino = caminoActual; }
             return;
         }
         for (auto& c : g.rutas.conexiones) {
-            if (c.nodoInicial != u) continue; // DIRIGIDO: solo ida
+            if (c.nodoInicial != u) continue;
             int v = c.nodoFinal;
             int vi = idx(v);
             if (vi == -1 || visitado[vi]) continue;
@@ -120,7 +146,7 @@ void rutaMasLarga(const Digrafo& g, int origen, int destino) {
     dfs(origen);
 
     cout << "\n=== Ruta MAS LARGA de [" << etq(origen)
-         << "] a [" << etq(destino) << "] ===" << endl;
+        << "] a [" << etq(destino) << "] ===" << endl;
     if (mejorCosto < 0) { cout << "  No existe camino entre ambos nodos." << endl; return; }
     cout << "  Tiempo total: " << mejorCosto << " min" << endl << "  Camino: ";
     for (int k = 0; k < (int)mejorCamino.size(); k++) {

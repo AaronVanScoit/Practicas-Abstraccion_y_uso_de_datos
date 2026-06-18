@@ -62,14 +62,13 @@ void mostrarArbol(const Arbol& a) {
     cout << "\nRecorrido Posorden:" << endl;  posorden(a.raiz);
 }
 
-//Dijkstra sobre las conexiones del árbol
+// Dijkstra sobre las conexiones del árbol
 void dijkstra(const Arbol& a, int origen) {
     int n = a.nodos.size();
     vector<float> dist(n, 1e9);
     vector<int>   prev(n, -1);
     vector<bool>  vis(n, false);
 
-    // mapear id -> indice
     auto idx = [&](int id) -> int {
         for (int i = 0; i < n; i++) if (a.nodos[i].id == id) return i;
         return -1;
@@ -90,7 +89,6 @@ void dijkstra(const Arbol& a, int origen) {
         vis[u] = true;
         for (auto& c : a.rutas.conexiones) {
             int ui = idx(c.nodoInicial), vi = idx(c.nodoFinal);
-            // árbol no dirigido
             if (ui == u && !vis[vi] && dist[u]+c.tiempo < dist[vi]) { dist[vi]=dist[u]+c.tiempo; prev[vi]=u; }
             if (vi == u && !vis[ui] && dist[u]+c.tiempo < dist[ui]) { dist[ui]=dist[u]+c.tiempo; prev[ui]=u; }
         }
@@ -109,6 +107,31 @@ void dijkstra(const Arbol& a, int origen) {
         }
         cout << endl;
     }
+
+    //Ruta mas corta
+    cout << "\nNodo destino (0=Casa ... 9=UPIICSA): ";
+    int destino;
+    cin >> destino;
+
+    int di = idx(destino);
+
+    cout << "\n>>> RUTA MAS CORTA de [" << etq(origen)
+        << "] a [" << etq(destino) << "] <<<" << endl;
+
+    if (di == -1 || dist[di] >= 1e9) {
+        cout << "  No existe camino entre ambos nodos." << endl;
+    } else {
+        cout << "  Tiempo total: " << dist[di] << " min" << endl;
+        cout << "  Camino: ";
+        vector<int> path;
+        for (int cur = di; cur != -1; cur = prev[cur]) path.push_back(cur);
+        for (int k = path.size()-1; k >= 0; k--) {
+            cout << etq(a.nodos[path[k]].id);
+            if (k > 0) cout << " -> ";
+        }
+        cout << endl;
+    }
+    // ───────────────────────────────────────────────────────────────────────
 }
 
 // Ruta más larga (DFS con backtracking, no dirigido)
@@ -165,7 +188,6 @@ void rutaMasLarga(const Arbol& a, int origen, int destino) {
     cout << endl;
 }
 
-// ─── Leer XML ─────────────────────────────────────────────
 void leerDesdeXML(Arbol& a, const string& archivo) {
     a.nodos.clear(); a.aristas.clear(); a.rutas.conexiones.clear(); a.raiz = nullptr;
     ifstream f(archivo);
@@ -205,7 +227,6 @@ void leerDesdeXML(Arbol& a, const string& archivo) {
     cout<<"XML cargado: "<<a.rutas.conexiones.size()<<" conexiones, "<<a.nodos.size()<<" nodos."<<endl;
 }
 
-// Leer JSON
 void leerDesdeJSON(Arbol& a, const string& archivo) {
     a.nodos.clear(); a.aristas.clear(); a.rutas.conexiones.clear(); a.raiz = nullptr;
     ifstream f(archivo);
@@ -246,7 +267,6 @@ void leerDesdeJSON(Arbol& a, const string& archivo) {
     cout<<"JSON cargado: "<<a.rutas.conexiones.size()<<" conexiones."<<endl;
 }
 
-// Aquí se guardan las 4 salidas 
 void guardarSalidas(const Arbol& a) {
     ofstream txt("salida.txt");
     txt<<"=== ARBOL BST ==="<<endl<<"NODOS:"<<endl;
