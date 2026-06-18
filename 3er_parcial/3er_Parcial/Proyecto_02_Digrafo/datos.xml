@@ -2,44 +2,77 @@
 <grafo>
   <nodos>
     <nodo><id>0</id><etiqueta>Casa</etiqueta></nodo>
-    <nodo><id>1</id><etiqueta>Insurgentes</etiqueta></nodo>
+    <nodo><id>1</id><etiqueta>Insurgentes-Sur</etiqueta></nodo>
     <nodo><id>2</id><etiqueta>Vasconcelos</etiqueta></nodo>
-    <nodo><id>3</id><etiqueta>Churubusco</etiqueta></nodo>
-    <nodo><id>4</id><etiqueta>Anil</etiqueta></nodo>
-    <nodo><id>5</id><etiqueta>Iztacalco</etiqueta></nodo>
-    <nodo><id>6</id><etiqueta>UPIICSA</etiqueta></nodo>
+    <nodo><id>3</id><etiqueta>Tlalpan</etiqueta></nodo>
+    <nodo><id>4</id><etiqueta>Churubusco</etiqueta></nodo>
+    <nodo><id>5</id><etiqueta>Periferico</etiqueta></nodo>
+    <nodo><id>6</id><etiqueta>Ermita-Iztapalapa</etiqueta></nodo>
+    <nodo><id>7</id><etiqueta>Taxquena</etiqueta></nodo>
+    <nodo><id>8</id><etiqueta>Iztacalco</etiqueta></nodo>
+    <nodo><id>9</id><etiqueta>UPIICSA</etiqueta></nodo>
   </nodos>
   <rutas>
     <conexiones>
       <conexionNodo2Nodo>
         <nodoInicial>0</nodoInicial><nodoFinal>1</nodoFinal>
-        <aristaConexion>Casa-Insurgentes</aristaConexion>
-        <tiempo>10.0</tiempo><costo>10.0</costo>
+        <aristaConexion>Casa-InsurgentesSur</aristaConexion>
+        <tiempo>10.0</tiempo><costo>0.0</costo>
       </conexionNodo2Nodo>
       <conexionNodo2Nodo>
         <nodoInicial>1</nodoInicial><nodoFinal>2</nodoFinal>
-        <aristaConexion>Insurgentes-Vasconcelos</aristaConexion>
+        <aristaConexion>InsurgentesSur-Vasconcelos</aristaConexion>
+        <tiempo>15.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>2</nodoInicial><nodoFinal>4</nodoFinal>
+        <aristaConexion>Vasconcelos-Churubusco</aristaConexion>
+        <tiempo>10.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>0</nodoInicial><nodoFinal>3</nodoFinal>
+        <aristaConexion>Casa-Tlalpan</aristaConexion>
         <tiempo>8.0</tiempo><costo>0.0</costo>
       </conexionNodo2Nodo>
       <conexionNodo2Nodo>
-        <nodoInicial>2</nodoInicial><nodoFinal>3</nodoFinal>
-        <aristaConexion>Vasconcelos-Churubusco</aristaConexion>
+        <nodoInicial>3</nodoInicial><nodoFinal>4</nodoFinal>
+        <aristaConexion>Tlalpan-Churubusco</aristaConexion>
+        <tiempo>20.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>4</nodoInicial><nodoFinal>9</nodoFinal>
+        <aristaConexion>Churubusco-UPIICSA</aristaConexion>
         <tiempo>12.0</tiempo><costo>0.0</costo>
       </conexionNodo2Nodo>
       <conexionNodo2Nodo>
-        <nodoInicial>3</nodoInicial><nodoFinal>4</nodoFinal>
-        <aristaConexion>Churubusco-Anil</aristaConexion>
-        <tiempo>7.0</tiempo><costo>0.0</costo>
-      </conexionNodo2Nodo>
-      <conexionNodo2Nodo>
-        <nodoInicial>4</nodoInicial><nodoFinal>5</nodoFinal>
-        <aristaConexion>Anil-Iztacalco</aristaConexion>
-        <tiempo>5.0</tiempo><costo>0.0</costo>
+        <nodoInicial>0</nodoInicial><nodoFinal>5</nodoFinal>
+        <aristaConexion>Casa-Periferico</aristaConexion>
+        <tiempo>12.0</tiempo><costo>35.0</costo>
       </conexionNodo2Nodo>
       <conexionNodo2Nodo>
         <nodoInicial>5</nodoInicial><nodoFinal>6</nodoFinal>
+        <aristaConexion>Periferico-Ermita</aristaConexion>
+        <tiempo>25.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>6</nodoInicial><nodoFinal>9</nodoFinal>
+        <aristaConexion>Ermita-UPIICSA</aristaConexion>
+        <tiempo>10.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>3</nodoInicial><nodoFinal>7</nodoFinal>
+        <aristaConexion>Tlalpan-Taxquena</aristaConexion>
+        <tiempo>12.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>7</nodoInicial><nodoFinal>8</nodoFinal>
+        <aristaConexion>Taxquena-Iztacalco</aristaConexion>
+        <tiempo>15.0</tiempo><costo>0.0</costo>
+      </conexionNodo2Nodo>
+      <conexionNodo2Nodo>
+        <nodoInicial>8</nodoInicial><nodoFinal>9</nodoFinal>
         <aristaConexion>Iztacalco-UPIICSA</aristaConexion>
-        <tiempo>8.0</tiempo><costo>50.0</costo>
+        <tiempo>8.0</tiempo><costo>0.0</costo>
       </conexionNodo2Nodo>
     </conexiones>
   </rutas>

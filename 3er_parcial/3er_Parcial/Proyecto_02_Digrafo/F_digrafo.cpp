@@ -1,3 +1,4 @@
+#include <functional>
 #include "Lib_digrafo.h"
 #include <climits>
 
@@ -48,8 +49,8 @@ void dijkstra(const Digrafo& g, int origen) {
         for (auto& c : g.rutas.conexiones) {
             if (c.nodoInicial == u) {
                 int v = c.nodoFinal;
-                if (!vis[v] && dist[u] + c.costo < dist[v]) {
-                    dist[v] = dist[u] + c.costo;
+                if (!vis[v] && dist[u] + c.tiempo < dist[v]) {
+                    dist[v] = dist[u] + c.tiempo;
                     prev[v] = u;
                 }
             }
@@ -65,7 +66,7 @@ void dijkstra(const Digrafo& g, int origen) {
     for (int i = 0; i < n; i++) {
         cout << "  -> " << etq(g.nodos[i].id);
         if (dist[i] >= 1e9) { cout << ": INACCESIBLE" << endl; continue; }
-        cout << ": $" << dist[i] << "  | camino: ";
+        cout << ": " << dist[i] << " min" << "  | camino: ";
         vector<int> path;
         for (int cur = i; cur != -1; cur = prev[cur]) path.push_back(cur);
         for (int k = path.size()-1; k >= 0; k--) {
@@ -76,7 +77,61 @@ void dijkstra(const Digrafo& g, int origen) {
     }
 }
 
+// Ruta más larga (DFS con backtracking, DIRIGIDO)
+void rutaMasLarga(const Digrafo& g, int origen, int destino) {
+    int n = g.nodos.size();
+    auto etq = [&](int id) -> string {
+        for (auto& nd : g.nodos) if (nd.id == id) return nd.etiqueta;
+        return to_string(id);
+    };
+    auto idx = [&](int id) -> int {
+        for (int i = 0; i < n; i++) if (g.nodos[i].id == id) return i;
+        return -1;
+    };
+    vector<bool> visitado(n, false);
+    vector<int>  caminoActual, mejorCamino;
+    float costoActual = 0, mejorCosto = -1;
+
+    function<void(int)> dfs = [&](int u) {
+        int ui = idx(u);
+        if (u == destino) {
+            if (costoActual > mejorCosto) { mejorCosto = costoActual; mejorCamino = caminoActual; }
+            return;
+        }
+        for (auto& c : g.rutas.conexiones) {
+            if (c.nodoInicial != u) continue; // DIRIGIDO: solo ida
+            int v = c.nodoFinal;
+            int vi = idx(v);
+            if (vi == -1 || visitado[vi]) continue;
+            visitado[vi] = true;
+            caminoActual.push_back(v);
+            costoActual += c.tiempo;
+            dfs(v);
+            costoActual -= c.tiempo;
+            caminoActual.pop_back();
+            visitado[vi] = false;
+        }
+    };
+
+    int oi = idx(origen);
+    if (oi == -1) { cout << "Nodo origen no encontrado." << endl; return; }
+    visitado[oi] = true;
+    caminoActual.push_back(origen);
+    dfs(origen);
+
+    cout << "\n=== Ruta MAS LARGA de [" << etq(origen)
+         << "] a [" << etq(destino) << "] ===" << endl;
+    if (mejorCosto < 0) { cout << "  No existe camino entre ambos nodos." << endl; return; }
+    cout << "  Tiempo total: " << mejorCosto << " min" << endl << "  Camino: ";
+    for (int k = 0; k < (int)mejorCamino.size(); k++) {
+        cout << etq(mejorCamino[k]);
+        if (k < (int)mejorCamino.size()-1) cout << " -> ";
+    }
+    cout << endl;
+}
+
 void leerDesdeXML(Digrafo& g, const string& archivo) {
+    g.nodos.clear(); g.aristas.clear(); g.rutas.conexiones.clear();
     ifstream f(archivo);
     if (!f.is_open()) { cout << "[ERROR] No se pudo abrir " << archivo << endl; return; }
     string linea; conexionNodo2Nodo c; bool enConexion = false;
@@ -115,6 +170,7 @@ void leerDesdeXML(Digrafo& g, const string& archivo) {
 }
 
 void leerDesdeJSON(Digrafo& g, const string& archivo) {
+    g.nodos.clear(); g.aristas.clear(); g.rutas.conexiones.clear();
     ifstream f(archivo);
     if (!f.is_open()) { cout << "[ERROR] No se pudo abrir " << archivo << endl; return; }
     string content((istreambuf_iterator<char>(f)), istreambuf_iterator<char>());

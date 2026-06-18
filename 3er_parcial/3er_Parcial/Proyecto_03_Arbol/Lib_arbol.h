@@ -47,6 +47,7 @@ void preorden       (NodoArbol* nodo);
 void posorden       (NodoArbol* nodo);
 void mostrarArbol   (const Arbol& a);
 void dijkstra       (const Arbol& a, int origen);
+void rutaMasLarga   (const Arbol& a, int origen, int destino);
 void leerDesdeXML   (Arbol& a, const string& archivo);
 void leerDesdeJSON  (Arbol& a, const string& archivo);
 void guardarSalidas (const Arbol& a);

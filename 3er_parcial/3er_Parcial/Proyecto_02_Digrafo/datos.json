@@ -2,20 +2,29 @@
   "grafo": {
     "nodos": [
       {"id":0,"etiqueta":"Casa"},
-      {"id":1,"etiqueta":"Insurgentes"},
+      {"id":1,"etiqueta":"Insurgentes-Sur"},
       {"id":2,"etiqueta":"Vasconcelos"},
-      {"id":3,"etiqueta":"Churubusco"},
-      {"id":4,"etiqueta":"Anil"},
-      {"id":5,"etiqueta":"Iztacalco"},
-      {"id":6,"etiqueta":"UPIICSA"}
+      {"id":3,"etiqueta":"Tlalpan"},
+      {"id":4,"etiqueta":"Churubusco"},
+      {"id":5,"etiqueta":"Periferico"},
+      {"id":6,"etiqueta":"Ermita-Iztapalapa"},
+      {"id":7,"etiqueta":"Taxquena"},
+      {"id":8,"etiqueta":"Iztacalco"},
+      {"id":9,"etiqueta":"UPIICSA"}
     ],
     "conexiones": [
-      {"nodoInicial":0,"nodoFinal":1,"aristaConexion":"Casa-Insurgentes","tiempo":10.0,"costo":10.0},
-      {"nodoInicial":1,"nodoFinal":2,"aristaConexion":"Insurgentes-Vasconcelos","tiempo":8.0,"costo":0.0},
-      {"nodoInicial":2,"nodoFinal":3,"aristaConexion":"Vasconcelos-Churubusco","tiempo":12.0,"costo":0.0},
-      {"nodoInicial":3,"nodoFinal":4,"aristaConexion":"Churubusco-Anil","tiempo":7.0,"costo":0.0},
-      {"nodoInicial":4,"nodoFinal":5,"aristaConexion":"Anil-Iztacalco","tiempo":5.0,"costo":0.0},
-      {"nodoInicial":5,"nodoFinal":6,"aristaConexion":"Iztacalco-UPIICSA","tiempo":8.0,"costo":50.0}
+      {"nodoInicial":0,"nodoFinal":1,"aristaConexion":"Casa-InsurgentesSur",      "tiempo":10.0,"costo":0.0},
+      {"nodoInicial":1,"nodoFinal":2,"aristaConexion":"InsurgentesSur-Vasconcelos","tiempo":15.0,"costo":0.0},
+      {"nodoInicial":2,"nodoFinal":4,"aristaConexion":"Vasconcelos-Churubusco",   "tiempo":10.0,"costo":0.0},
+      {"nodoInicial":0,"nodoFinal":3,"aristaConexion":"Casa-Tlalpan",             "tiempo":8.0, "costo":0.0},
+      {"nodoInicial":3,"nodoFinal":4,"aristaConexion":"Tlalpan-Churubusco",       "tiempo":20.0,"costo":0.0},
+      {"nodoInicial":4,"nodoFinal":9,"aristaConexion":"Churubusco-UPIICSA",       "tiempo":12.0,"costo":0.0},
+      {"nodoInicial":0,"nodoFinal":5,"aristaConexion":"Casa-Periferico",          "tiempo":12.0,"costo":35.0},
+      {"nodoInicial":5,"nodoFinal":6,"aristaConexion":"Periferico-Ermita",        "tiempo":25.0,"costo":0.0},
+      {"nodoInicial":6,"nodoFinal":9,"aristaConexion":"Ermita-UPIICSA",           "tiempo":10.0,"costo":0.0},
+      {"nodoInicial":3,"nodoFinal":7,"aristaConexion":"Tlalpan-Taxquena",         "tiempo":12.0,"costo":0.0},
+      {"nodoInicial":7,"nodoFinal":8,"aristaConexion":"Taxquena-Iztacalco",       "tiempo":15.0,"costo":0.0},
+      {"nodoInicial":8,"nodoFinal":9,"aristaConexion":"Iztacalco-UPIICSA",        "tiempo":8.0, "costo":0.0}
     ]
   }
 }

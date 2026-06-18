@@ -36,6 +36,7 @@ void agregarNodo      (Grafo& g, int id, string etiqueta);
 void agregarConexion  (Grafo& g, int nodoIni, int nodoFin, string arista, float tiempo, float costo);
 void mostrarGrafo     (const Grafo& g);
 void dijkstra         (const Grafo& g, int origen);
+void rutaMasLarga     (const Grafo& g, int origen, int destino);
 void leerDesdeXML     (Grafo& g, const string& archivo);
 void leerDesdeJSON    (Grafo& g, const string& archivo);
 void guardarSalidas   (const Grafo& g);

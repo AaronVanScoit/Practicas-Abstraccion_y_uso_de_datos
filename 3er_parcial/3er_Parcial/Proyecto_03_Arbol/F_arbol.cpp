@@ -1,3 +1,4 @@
+#include <functional>
 #include "Lib_arbol.h"
 #include <climits>
 
@@ -90,8 +91,8 @@ void dijkstra(const Arbol& a, int origen) {
         for (auto& c : a.rutas.conexiones) {
             int ui = idx(c.nodoInicial), vi = idx(c.nodoFinal);
             // árbol no dirigido
-            if (ui == u && !vis[vi] && dist[u]+c.costo < dist[vi]) { dist[vi]=dist[u]+c.costo; prev[vi]=u; }
-            if (vi == u && !vis[ui] && dist[u]+c.costo < dist[ui]) { dist[ui]=dist[u]+c.costo; prev[ui]=u; }
+            if (ui == u && !vis[vi] && dist[u]+c.tiempo < dist[vi]) { dist[vi]=dist[u]+c.tiempo; prev[vi]=u; }
+            if (vi == u && !vis[ui] && dist[u]+c.tiempo < dist[ui]) { dist[ui]=dist[u]+c.tiempo; prev[ui]=u; }
         }
     }
 
@@ -99,7 +100,7 @@ void dijkstra(const Arbol& a, int origen) {
     for (int i = 0; i < n; i++) {
         cout << "  -> " << etq(a.nodos[i].id);
         if (dist[i] >= 1e9) { cout << ": INACCESIBLE" << endl; continue; }
-        cout << ": $" << dist[i] << "  | camino: ";
+        cout << ": " << dist[i] << " min" << "  | camino: ";
         vector<int> path;
         for (int cur = i; cur != -1; cur = prev[cur]) path.push_back(cur);
         for (int k = path.size()-1; k >= 0; k--) {
@@ -110,8 +111,63 @@ void dijkstra(const Arbol& a, int origen) {
     }
 }
 
+// Ruta más larga (DFS con backtracking, no dirigido)
+void rutaMasLarga(const Arbol& a, int origen, int destino) {
+    int n = a.nodos.size();
+    auto etq = [&](int id) -> string {
+        for (auto& nd : a.nodos) if (nd.id == id) return nd.etiqueta;
+        return to_string(id);
+    };
+    auto idx = [&](int id) -> int {
+        for (int i = 0; i < n; i++) if (a.nodos[i].id == id) return i;
+        return -1;
+    };
+    vector<bool> visitado(n, false);
+    vector<int>  caminoActual, mejorCamino;
+    float costoActual = 0, mejorCosto = -1;
+
+    function<void(int)> dfs = [&](int u) {
+        if (u == destino) {
+            if (costoActual > mejorCosto) { mejorCosto = costoActual; mejorCamino = caminoActual; }
+            return;
+        }
+        for (auto& c : a.rutas.conexiones) {
+            int v = -1; float w = c.tiempo;
+            if (c.nodoInicial == u) v = c.nodoFinal;
+            if (c.nodoFinal   == u) v = c.nodoInicial;
+            if (v == -1) continue;
+            int vi = idx(v);
+            if (vi == -1 || visitado[vi]) continue;
+            visitado[vi] = true;
+            caminoActual.push_back(v);
+            costoActual += w;
+            dfs(v);
+            costoActual -= w;
+            caminoActual.pop_back();
+            visitado[vi] = false;
+        }
+    };
+
+    int oi = idx(origen);
+    if (oi == -1) { cout << "Nodo origen no encontrado." << endl; return; }
+    visitado[oi] = true;
+    caminoActual.push_back(origen);
+    dfs(origen);
+
+    cout << "\n=== Ruta MAS LARGA de [" << etq(origen)
+        << "] a [" << etq(destino) << "] ===" << endl;
+    if (mejorCosto < 0) { cout << "  No existe camino entre ambos nodos." << endl; return; }
+    cout << "  Tiempo total: " << mejorCosto << " min" << endl << "  Camino: ";
+    for (int k = 0; k < (int)mejorCamino.size(); k++) {
+        cout << etq(mejorCamino[k]);
+        if (k < (int)mejorCamino.size()-1) cout << " -> ";
+    }
+    cout << endl;
+}
+
 // ─── Leer XML ─────────────────────────────────────────────
 void leerDesdeXML(Arbol& a, const string& archivo) {
+    a.nodos.clear(); a.aristas.clear(); a.rutas.conexiones.clear(); a.raiz = nullptr;
     ifstream f(archivo);
     if (!f.is_open()) { cout << "[ERROR] No se pudo abrir " << archivo << endl; return; }
     string linea; conexionNodo2Nodo c; bool enC = false;
@@ -151,6 +207,7 @@ void leerDesdeXML(Arbol& a, const string& archivo) {
 
 // Leer JSON
 void leerDesdeJSON(Arbol& a, const string& archivo) {
+    a.nodos.clear(); a.aristas.clear(); a.rutas.conexiones.clear(); a.raiz = nullptr;
     ifstream f(archivo);
     if (!f.is_open()) { cout<<"[ERROR] No se pudo abrir "<<archivo<<endl; return; }
     string content((istreambuf_iterator<char>(f)),istreambuf_iterator<char>());

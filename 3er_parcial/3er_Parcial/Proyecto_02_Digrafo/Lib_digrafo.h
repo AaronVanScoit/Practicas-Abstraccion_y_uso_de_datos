@@ -35,6 +35,7 @@ void agregarNodo     (Digrafo& g, int id, string etiqueta);
 void agregarConexion (Digrafo& g, int nodoIni, int nodoFin, string arista, float tiempo, float costo);
 void mostrarDigrafo  (const Digrafo& g);
 void dijkstra        (const Digrafo& g, int origen);
+void rutaMasLarga    (const Digrafo& g, int origen, int destino);
 void leerDesdeXML    (Digrafo& g, const string& archivo);
 void leerDesdeJSON   (Digrafo& g, const string& archivo);
 void guardarSalidas  (const Digrafo& g);
